@@ -1,0 +1,59 @@
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+
+/* Buttons */
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+
+	background-color: $color__background-body;
+    border: 2px solid $color__brand-green;
+    border-radius: 3px;
+    color: $color__brand-green;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1;
+	padding: .75rem 2.25rem;
+	
+		&:hover,
+		&:active,
+	    &:focus  {
+		border-color: $color__brand-green-hover;
+		color:2px solid $color__brand-green-hover
+	}
+
+
+}
+
+/* Fields */
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+
+	&:focus {
+		color: #111;
+	}
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"] {
+	padding: 3px;
+}
+
+textarea {
+	padding-left: 3px;
+	width: 100%;
+}

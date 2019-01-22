@@ -1,0 +1,128 @@
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+
+/* Posts and pages */
+
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 $base__space-unit;
+}
+
+.updated:not(.published){
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: $base__space-unit 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 $base__space-unit;
+}
+
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+
+
+.content-area{
+	@include center;
+	position:relative;
+
+	}
+
+.site-main{
+	width: 60%;
+	margin:auto;
+	
+}
+
+
+
+/*--------------------------------------------------------------
+# Quotes
+--------------------------------------------------------------*/
+
+
+
+#data-jQuery{
+	
+	p:first-child{
+		font-size: 2.5rem;
+	}
+	
+	span:first-child{
+		font-size: 1.25rem;
+   		font-weight: 400;
+	}
+}
+.quote-icon {
+	color: $color__brand-green;
+	font-size: 125px;
+	line-height: 125px;
+	position: absolute;
+	top: 0;
+}
+
+.fa-quote-left {
+	left:13px;
+}
+.fa-quote-right {
+	right:35px;
+}
+
+
+/*--------------------------------------------------------------
+# logo
+--------------------------------------------------------------*/
+
+
+
+.logo-center{
+	@include center;
+	padding-top: 60px;
+	text-align: center;
+
+	.logo-top{
+		width: 65%;
+	}
+}
+
+
+
+/*--------------------------------------------------------------
+# button
+--------------------------------------------------------------*/
+
+.button-center{
+	@include center;
+	text-align: center;
+}
+
+
+
+/*--------------------------------------------------------------
+archive
+--------------------------------------------------------------*/
+
+.dotted-line{
+	border-bottom: 1px dotted #fff;
+	font-size: 2.5rem;
+
+	span{
+		font-size: 1.2rem;
+	}
+}
