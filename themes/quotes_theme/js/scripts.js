@@ -11,27 +11,26 @@ jQuery( document ).ready(function() {
           '?filter[orderby]=rand&filter[posts_per_page]=1',
           beforeSend: function(xhr) {
             xhr.setRequestHeader('X-WP-Nonce', red_vars.wpapi_nonce);
-             }}).done(information => { fetch(information);});
+             }}).done(information => { fetch(information[0]);});
     });
   
 
     
-function fetch(response){
-  alert('its working');
-  let data = response[0];
-  let quoteResponse= data.content.rendered;
-    let authorResponse = data.title.rendered;
-    let qodResponse = data['_qod_quote_source'];
-    let qodUrlhResponse =data['_qod_quote_source_url'];
+function fetch(data){
+  
+    let qContent= data.content.rendered;
+    let qAuthor = data.title.rendered;
+    let qSource = data['_qod_quote_source'];
+    let qUrl =data['_qod_quote_source_url'];
     
-    jQuery('#data-jQuery').html(quoteResponse);
-    if(qodResponse===''){
-        jQuery('#data-jQuery').append('-'+authorResponse);}
+    jQuery('#data-jQuery').html(qContent);
+    if(qSource===''){
+        jQuery('#data-jQuery').append('-'+qAuthor);}
     else{
-      jQuery('#data-jQuery').append('<span>-'+authorResponse+',  </span>');
+      jQuery('#data-jQuery').append('<span>-'+qAuthor+',  </span>');
         }
 
-    jQuery('#data-jQuery').append('<a href="'+qodUrlhResponse+'">'+qodResponse+'</a>');
+    jQuery('#data-jQuery').append('<a href="'+qUrl+'">'+qSource+'</a>');
     window.history.pushState(null, null, data.slug);
   }
 
@@ -41,38 +40,27 @@ function fetch(response){
 
 
 
-
-    function handle201() {
-        alert('Success! Comments are upload.');
-        
-        // console.log(data.link);
-    }
-
-    jQuery('.submit-btn').on('click', function(event) {
-      event.preventDefault();
+    jQuery('.submit-btn').on('click', function() {
      
-      let nameAuthor = jQuery('#author').val();
-      let nameQuote = jQuery('#quote').val();
-      let sourceBook = jQuery('#sourceBook').val();
-      let sourceURL = jQuery('#sourceQuote').val();
-
+               
       jQuery.ajax({
         method: 'POST',
         url: red_vars.rest_url + 'wp/v2/posts',
         data:  {
-          content: nameQuote,
-          title: nameAuthor,
-          _qod_quote_source: sourceBook,
-          _qod_quote_source_url: sourceURL,
+          content: jQuery('#quote').val(),
+          title: jQuery('#author').val(),
+          _qod_quote_source: jQuery('#sourceBook').val(),
+          _qod_quote_source_url: jQuery('#sourceQuote').val(),
           post_status: 'draft'
         },
         beforeSend: function(xhr) {
           xhr.setRequestHeader('X-WP-Nonce', red_vars.wpapi_nonce);
-        },
-        statusCode: {
-          201: handle201
         }
+      }).done(function(){
+        alert("Quote was created, thanks for your contribution");
+        jQuery("#submit-info")[0].reset();
       }).fail(function(){
+        alert("Attention, Quote was not submitted. Please try Again.");
         
       });
     

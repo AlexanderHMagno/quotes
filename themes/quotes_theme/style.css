@@ -39,6 +39,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## All Archives Page
 	## Submit a Quote Page
 --------------------------------------------------------------*/
+/* Large devices (landscape pc, 1240 and up) */
+/* Medium devices (landscape tablets, 768px and up) */
 html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%; }

@@ -10,3 +10,22 @@
 	width: 1080px;
 	margin:auto;
 }
+
+
+$breakpoint-tablet: 768px;
+$breakpoint-pc: 1240px;
+	
+	/* Large devices (landscape pc, 1240 and up) */
+@mixin desktop-size {
+	@media (min-width: $breakpoint-pc) {
+	  @content;
+	}
+  }
+
+	  /* Medium devices (landscape tablets, 768px and up) */
+	  
+	  @mixin tablet-size {
+		@media (min-width: $breakpoint-tablet) {
+		  @content;
+		}
+	  }
