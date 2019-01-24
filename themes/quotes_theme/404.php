@@ -10,11 +10,13 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
+	<i class="fas fa-quote-left quote-icon"></i>
+	<i class="fas fa-quote-right quote-icon"></i>
 		<main id="main" class="site-main" role="main">
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title"><?php echo esc_html( 'Oops! That page can&rsquo;t be found.' ); ?></h1>
+					<h1 class="page-title"><?php echo esc_html( 'Oops!' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<div class="page-content">

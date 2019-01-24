@@ -195,9 +195,9 @@ input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
 fieldset {
-  border: 1px solid #c0c0c0;
+  border: none;
   margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em; }
+  padding: 0.35em 0 0.75em; }
 
 legend {
   border: 0;
@@ -388,7 +388,7 @@ input[type="submit"] {
   border-radius: 3px;
   color: #00cc00;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: normal;
   line-height: 1;
   padding: .75rem 2.25rem; }
   button:hover, button:active, button:focus,
@@ -404,6 +404,11 @@ input[type="submit"] {
     border-color: #026902;
     color: 2px solid #026902; }
 
+button.search-submit {
+  border: none;
+  padding: 12px;
+  font-size: 1.25rem; }
+
 /* Fields */
 input[type="text"],
 input[type="email"],
@@ -412,7 +417,8 @@ input[type="password"],
 input[type="search"],
 textarea {
   color: #666;
-  border: 1px solid #ccc;
+  border: 2px solid #00cc00;
+  background: transparent;
   border-radius: 3px; }
   input[type="text"]:focus,
   input[type="email"]:focus,
@@ -420,18 +426,26 @@ textarea {
   input[type="password"]:focus,
   input[type="search"]:focus,
   textarea:focus {
-    color: #111; }
+    color: #fff; }
 
 input[type="text"],
 input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"] {
-  padding: 3px; }
+  padding: 6px;
+  border: 2px solid #00cc00;
+  background: transparent;
+  font-size: 1.25rem;
+  width: 60%; }
 
 textarea {
-  padding-left: 3px;
-  width: 100%; }
+  padding-left: 6px;
+  width: 100%;
+  height: 100px; }
+
+input[type="search"] {
+  width: 30%; }
 
 /*--------------------------------------------------------------
 # Navigation
@@ -499,6 +513,10 @@ a {
   .main-navigation a {
     display: inline-block;
     text-decoration: none; }
+  .main-navigation .current_page_item > a,
+  .main-navigation .current-menu-item > a,
+  .main-navigation .current_page_ancestor > a {
+    content: ""; }
 
 /* Small menu. */
 .menu-toggle,
@@ -675,6 +693,17 @@ archive
   font-size: 2.5rem; }
   .dotted-line span {
     font-size: 1.2rem; }
+
+.journal-contenedor li {
+  font-size: 1.25rem;
+  margin-bottom: .5rem;
+  font-weight: lighter; }
+
+/*--------------------------------------------------------------
+search
+--------------------------------------------------------------*/
+.search-title {
+  border-bottom: 1px dotted #fff; }
 
 /*--------------------------------------------------------------
 # Media
