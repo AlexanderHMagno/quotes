@@ -28,19 +28,20 @@ a {
 /* Menus */
 
 .main-navigation {
-	    display: flex;
-		width: 80%;
+	    width: 50%;
 		margin: auto;
 		margin-top: 20px;
-		justify-content: flex-end;
-		margin: 4.5rem 0 3rem;
-     p{
-		display: inline-block;
-		margin:0px;
-		margin-left: 10px;
-		line-height: 1rem;
+		margin: 2.5rem 10px 3rem;
+		min-width: 400px;
 
-	 }
+		p{
+			display: inline-block;
+			margin:10px;
+			margin-left: 10px;
+			line-height: 1rem;
+	
+		 }
+     
 	ul {
 		display: none;
 		list-style: none;
@@ -98,21 +99,44 @@ a {
 	.current_page_ancestor > a {
 		content:"";
 	}
+
+	@include tablet-size {
+		display: flex;
+		width: 100%;
+		justify-content: flex-start;
+		margin: 4.5rem 0 3rem;
+
+		p{
+			margin:0px;
+			margin-left: 10px;
+		 }
+	
+	} 
+
+	@include desktop-size {
+		display: flex;
+		width: 80%;
+		justify-content: flex-end;
+		margin: 4.5rem 0 3rem;
+
+		p{
+			margin:0px;
+			margin-left: 10px;
+		 }
+	
+	} 
+
 }
 
 /* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
 
-@media screen and (min-width: 768px) {
+
 	.menu-toggle {
 		display: none;
 	}
 	.main-navigation ul {
 		display: block;
-	}
+	
 }
 
 .comment-navigation,
@@ -133,5 +157,6 @@ a {
 		float: right;
 		text-align: right;
 		width: 50%;
+		
 	}
 }

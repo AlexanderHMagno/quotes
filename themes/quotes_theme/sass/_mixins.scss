@@ -7,13 +7,24 @@
 
 
 @mixin center{
+	max-width: 1080px;
+	margin:auto;
+}
+
+@mixin center-phone{
+	width: 1080px;
+	margin:auto;
+}
+
+@mixin center-tablet{
 	width: 1080px;
 	margin:auto;
 }
 
 
-$breakpoint-tablet: 768px;
-$breakpoint-pc: 1240px;
+
+$breakpoint-tablet: 620px;
+$breakpoint-pc: 1080px;
 	
 	/* Large devices (landscape pc, 1240 and up) */
 @mixin desktop-size {

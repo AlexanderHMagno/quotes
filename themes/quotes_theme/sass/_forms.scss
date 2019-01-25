@@ -74,5 +74,18 @@ textarea {
 }
 
 input[type="search"]{
-	width: 30%;
+	width: 65%;
+
+	@include tablet-size {
+		
+	width: 42%;
+	} 
+	
+	@include desktop-size {
+		
+		width: 30%;
+		} 
+		
+	
+	
 }

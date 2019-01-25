@@ -45,8 +45,41 @@
 	}
 
 .site-main{
-	width: 60%;
+	width: 90%;
 	margin:auto;
+
+	@include tablet-size {
+		width: 92%;
+	}
+
+	@include desktop-size {
+		width: 60%;
+	    position: relative;
+
+		&:before,
+		&:after {
+			color: $color__brand-green;
+			font-family: 'fontawesome-free';
+			font-size: 125px;
+			line-height: 125px;
+			position: absolute;
+			top: 0;
+		}
+	
+		&:before {
+			content: '\f10d';
+			left:-180px;
+		}
+	
+		&:after {
+			content: '\f10e';
+			right:-165px;
+		}	
+	}
+
+
+
+
 	
 }
 
@@ -61,29 +94,26 @@
 #data-jQuery{
 	
 	p:first-child{
-		font-size: 2.5rem;
+
+
+		font-size: 1.25rem;
+
+		
+		@include tablet-size {
+			font-size: 2rem;
+		}
+	
+
+		@include desktop-size {
+			font-size: 2.5rem;
+		}
 	}
 	
-	span:first-child{
-		font-size: 1.25rem;
+	span,a{
+		font-size: 1.3rem;
    		font-weight: 400;
 	}
 }
-.quote-icon {
-	color: $color__brand-green;
-	font-size: 125px;
-	line-height: 125px;
-	position: absolute;
-	top: 0;
-}
-
-.fa-quote-left {
-	left:13px;
-}
-.fa-quote-right {
-	right:35px;
-}
-
 
 /*--------------------------------------------------------------
 # logo
@@ -94,7 +124,12 @@
 .logo-center{
 	@include center;
 	padding-top: 60px;
-	text-align: center;
+	padding-left:20px;
+	text-align: left;
+
+	@include desktop-size {
+		text-align:center;
+	} 
 
 	.logo-top{
 		width: 65%;
@@ -108,8 +143,13 @@
 --------------------------------------------------------------*/
 
 .button-center{
-	@include center;
-	text-align: center;
+	text-align: left;
+	margin:auto; 
+	width: 90%;
+
+	@include desktop-size {
+		text-align:center;
+	} 
 }
 
 
@@ -150,3 +190,8 @@ search
 
 	border-bottom: 1px dotted #fff;
 }
+
+
+
+
+

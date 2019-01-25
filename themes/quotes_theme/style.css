@@ -250,6 +250,13 @@ th {
   font-weight: 300;
   font-style: normal; }
 
+@font-face {
+  font-family: 'fontawesome-free';
+  src: url("../../fonts/fa-solid-900.eot");
+  src: url("../../fonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../../fonts/fa-solid-900.woff2") format("woff2"), url("../../fonts/fa-solid-900.woff") format("woff"), url("../../fonts/fa-solid-900.ttf") format("truetype"), url("../../fonts/fa-solid-900.svg#fontawesome-free") format("svg");
+  font-weight: 900;
+  font-style: normal; }
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -326,7 +333,8 @@ body {
   color: #fff;
   font-family: exo, sans-serif;
   font-size: 1rem;
-  line-height: 1.5; }
+  line-height: 1.5;
+  min-width: 400px; }
 
 blockquote,
 q {
@@ -376,6 +384,14 @@ img {
 table {
   margin: 0 0 1.5rem;
   width: 100%; }
+
+@media (min-width: 620px) {
+  footer .main-navigation ul {
+    margin-left: 18px; } }
+
+footer .main-navigation li {
+  margin-right: 0px;
+  padding: 0 0.5rem 0 0.75rem; }
 
 /*--------------------------------------------------------------
 # Forms
@@ -447,7 +463,13 @@ textarea {
   height: 100px; }
 
 input[type="search"] {
-  width: 30%; }
+  width: 65%; }
+  @media (min-width: 620px) {
+    input[type="search"] {
+      width: 42%; } }
+  @media (min-width: 1080px) {
+    input[type="search"] {
+      width: 30%; } }
 
 /*--------------------------------------------------------------
 # Navigation
@@ -467,19 +489,14 @@ a {
 
 /* Menus */
 .main-navigation {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 80%;
+  width: 50%;
   margin: auto;
   margin-top: 20px;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  margin: 4.5rem 0 3rem; }
+  margin: 2.5rem 10px 3rem;
+  min-width: 400px; }
   .main-navigation p {
     display: inline-block;
-    margin: 0px;
+    margin: 10px;
     margin-left: 10px;
     line-height: 1rem; }
   .main-navigation ul {
@@ -519,17 +536,39 @@ a {
   .main-navigation .current-menu-item > a,
   .main-navigation .current_page_ancestor > a {
     content: ""; }
+  @media (min-width: 620px) {
+    .main-navigation {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      width: 100%;
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      margin: 4.5rem 0 3rem; }
+      .main-navigation p {
+        margin: 0px;
+        margin-left: 10px; } }
+  @media (min-width: 1080px) {
+    .main-navigation {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      width: 80%;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end;
+      margin: 4.5rem 0 3rem; }
+      .main-navigation p {
+        margin: 0px;
+        margin-left: 10px; } }
 
 /* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-  display: block; }
+.menu-toggle {
+  display: none; }
 
-@media screen and (min-width: 768px) {
-  .menu-toggle {
-    display: none; }
-  .main-navigation ul {
-    display: block; } }
+.main-navigation ul {
+  display: block; }
 
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
@@ -637,45 +676,62 @@ a {
 # Content
 --------------------------------------------------------------*/
 .content-area {
-  width: 1080px;
+  max-width: 1080px;
   margin: auto;
   position: relative; }
 
 .site-main {
-  width: 60%;
+  width: 90%;
   margin: auto; }
+  @media (min-width: 620px) {
+    .site-main {
+      width: 92%; } }
+  @media (min-width: 1080px) {
+    .site-main {
+      width: 60%;
+      position: relative; }
+      .site-main:before, .site-main:after {
+        color: #00cc00;
+        font-family: 'fontawesome-free';
+        font-size: 125px;
+        line-height: 125px;
+        position: absolute;
+        top: 0; }
+      .site-main:before {
+        content: '\f10d';
+        left: -180px; }
+      .site-main:after {
+        content: '\f10e';
+        right: -165px; } }
 
 /*--------------------------------------------------------------
 # Quotes
 --------------------------------------------------------------*/
 #data-jQuery p:first-child {
-  font-size: 2.5rem; }
+  font-size: 1.25rem; }
+  @media (min-width: 620px) {
+    #data-jQuery p:first-child {
+      font-size: 2rem; } }
+  @media (min-width: 1080px) {
+    #data-jQuery p:first-child {
+      font-size: 2.5rem; } }
 
-#data-jQuery span:first-child {
-  font-size: 1.25rem;
+#data-jQuery span, #data-jQuery a {
+  font-size: 1.3rem;
   font-weight: 400; }
-
-.quote-icon {
-  color: #00cc00;
-  font-size: 125px;
-  line-height: 125px;
-  position: absolute;
-  top: 0; }
-
-.fa-quote-left {
-  left: 13px; }
-
-.fa-quote-right {
-  right: 35px; }
 
 /*--------------------------------------------------------------
 # logo
 --------------------------------------------------------------*/
 .logo-center {
-  width: 1080px;
+  max-width: 1080px;
   margin: auto;
   padding-top: 60px;
-  text-align: center; }
+  padding-left: 20px;
+  text-align: left; }
+  @media (min-width: 1080px) {
+    .logo-center {
+      text-align: center; } }
   .logo-center .logo-top {
     width: 65%; }
 
@@ -683,9 +739,12 @@ a {
 # button
 --------------------------------------------------------------*/
 .button-center {
-  width: 1080px;
+  text-align: left;
   margin: auto;
-  text-align: center; }
+  width: 90%; }
+  @media (min-width: 1080px) {
+    .button-center {
+      text-align: center; } }
 
 /*--------------------------------------------------------------
 archive

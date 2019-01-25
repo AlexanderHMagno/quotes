@@ -8,8 +8,7 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-	<i class="fas fa-quote-left quote-icon"></i>
-	<i class="fas fa-quote-right quote-icon"></i>
+	
 		<main id="main" class="site-main" role="main">
 
 

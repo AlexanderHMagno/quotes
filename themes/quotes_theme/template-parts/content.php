@@ -12,7 +12,7 @@
 	
 	<div class="entry-content" id="data-jQuery">
 	<?php the_excerpt(); ?>
-	<?php the_title('<span>-','</span>');?>
+	<?php the_title('<span>- ','</span>');?>
     
 	
 	

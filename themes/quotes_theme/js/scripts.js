@@ -25,7 +25,7 @@ function fetch(data){
     
     jQuery('#data-jQuery').html(qContent);
     if(qSource===''){
-        jQuery('#data-jQuery').append('-'+qAuthor);}
+        jQuery('#data-jQuery').append('- '+qAuthor);}
     else{
       jQuery('#data-jQuery').append('<span>-'+qAuthor+',  </span>');
         }
